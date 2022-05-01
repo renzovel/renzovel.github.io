@@ -5,7 +5,7 @@ Desenvolvedor de sites, aplicativos mobile e desktop.
 ### References :
 #### Layout principal, a ser feito.
 
-![Layout Inicial](src/images/references.jpg)
+![Layout Update](src/images/references.jpg?v=3)
 
 ### License 
 
