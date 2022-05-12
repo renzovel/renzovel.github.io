@@ -9,8 +9,7 @@
     <!--google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <!--styles css-->
     <link href="src/css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +20,7 @@
             <ul class="menu-nav">
                 <li>
                     <a href="#">
-                        INICIO
+                        <ion-icon name="home-outline"></ion-icon> INICIO
                     </a>
                 </li>
                 <li>
@@ -54,58 +53,61 @@
     </header>
     <main>
         <section id="profile">
-            <footer>
+            <article>
                 <img width="200" height="200" class="icon-profile" src="src/images/icon_nav.jpg" alt="Renzo Veliz - Desenvolvedor Full Stack">
                 <h3>Renzo Veliz</h3>
-                <h3>Idiomas:</h3>
+                <h3><ion-icon name="language"></ion-icon> Idiomas:</h3>
                 <ul>
                     <li>Spanhol (Nativo)</li>
                     <li>português</li>
                 </ul>
-                <h3>GitHub:</h3>
+                <h3><ion-icon name="logo-github"></ion-icon> GitHub:</h3>
                 <ul>
                     <li><a href="https://github.com/renzovel" target="blank">https://github.com/renzovel</a></li>
                 </ul>
-                <h3>GitLab:</h3>
+                <h3><ion-icon name="logo-gitlab"></ion-icon> GitLab:</h3>
                 <ul>
                     <li><a href="https://gitlab.com/renzo.veliz1/" target="blank">https://gitlab.com/renzo.veliz1</a></li>
                 </ul>
-            </footer>
+            </article>
             <aside>
-                <h1>Desenvolvedor Full Stack</h1>
-                <p>Desenvolvedor de aplicativos web, mobile e desktop. Atualizando-me frequentemente no mundo das tecnologias de desenvolvimento e sempre focando na qualidade do trabalho</p>
-                <br>
-                <h3 id="skills"><strong>Skills:</strong></h3>
                 <div>
+                    <h1>Desenvolvedor Full Stack</h1>
+                    <p>Desenvolvedor de aplicativos web, mobile e desktop. Atualizando-me frequentemente no mundo das tecnologias de desenvolvimento e sempre focando na qualidade do trabalho</p>
+                    <br>
+                    <h3 id="skills"><strong>Skills:</strong></h3>
+                </div>
+                
+                <div class="skills-details">
                     <div>
                         <ul>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 Java
                             </li>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 PHP
                             </li>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 JavaScript
                             </li>
                         </ul>
                     </div>
                     <div>
                         <ul>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 React-Native
                             </li>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 Bootstrap
                             </li>
                         </ul>
                     </div>
                     <div>
                         <ul>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 Docker
                             </li>
-                            <li>
+                            <li> <ion-icon name="checkmark-outline"></ion-icon>
                                 Git
                             </li>
                         </ul>
@@ -122,39 +124,51 @@
             </h5>
         </section>
         <section id="projetos">
-            <figure>
-                <img src="src/images/phinfortelecom_com_br.png" alt="phinfortelecom.com.br" width="33.33333%">
-                <figcaption>Criação de site <a href="https://phinfortelecom.com.br">https://phinfortelecom.com.br</a></figcaption>
-            </figure>
-            <figure>
-                <img src="src/images/nrsn.png" alt="nuestrosriosonnavegables.com" width="33.33333%">
-                <figcaption>Criação de site <a href="http://www.nuestrosriosonnavegables.com/">http://www.nuestrosriosonnavegables.com/</a></figcaption>
-            </figure>
-            <figure>
-                <img src="src/images/aplicativo_check.png" alt="App" width="33.33333%">
-                <figcaption>Criação de aplicativo móvel para ordens de serviço.</figcaption>
-            </figure>
-        </section>
-        <section>
             <div>
-                <h2>Técnico Superior Universitário em Análise e Desenho de Sistemas.</h2>
-                <h3>Formado desde 2016.</h3>
+                <figure>
+                    <img class="img_project" src="src/images/phinfortelecom_com_br.png" alt="phinfortelecom.com.br">
+                    <figcaption>
+                        <p>Criação de site </p>
+                        <a href="https://phinfortelecom.com.br">Ver o site &nbsp;<ion-icon name="link-outline"></ion-icon></a></figcaption>
+                </figure>
             </div>
             <div>
-                <img src="src/images/formatura_completa.jpg" alt="Formatura Completa">
+                <figure>
+                    <img class="img_project" src="src/images/nrsn.png" alt="nuestrosriosonnavegables.com">
+                    <figcaption>
+                        <p>Criação de site</p>
+                        <a href="http://www.nuestrosriosonnavegables.com/">Ver o site &nbsp;<ion-icon name="link-outline"></ion-icon></a></figcaption>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img class="img_project" src="src/images/aplicativo_check.png" alt="App">
+                    <figcaption>
+                        <p>Criação de aplicativo móvel para ordens de serviço.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="formatura">
+            <div id="content-text-forma" >
+                <h2 class="titulo-formatura">Técnico Superior Universitário em Análise e Desenho de Sistemas.</h2>
+                <h3 class="subtitulo-formatura">Formado desde 2016.</h3>
+            </div>
+            <div id="content-img-forma">
+                <img class="img-formatura" src="src/images/formatura_completa.jpg" alt="Formatura Completa">
             </div>
         </section>
     </main>
     <footer id="contato">
-        <div>
-            <div>
+        <div class="form-main">
+            <div class="form-content">
                 <h2>Contato</h2>
                 <form action="#" method="post">
                     <label for="nome">Nome:
-                        <input type="text" name="nome" value="">
+                        <input type="text" name="nome" value="" placeholder="Seu nome...">
                     </label>
                     <label for="email">Email:
-                        <input type="text" name="email" value="">
+                        <input type="text" name="email" value="Seu email...">
                     </label>
                     <button type="submit">Enviar</button>
                 </form>
@@ -176,5 +190,7 @@
         </div>
         <p>Create by Renzo Veliz (renzo.veliz1br@gmail.com), &copy; Copyright, 2022 All rights reserved.</p>
     </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

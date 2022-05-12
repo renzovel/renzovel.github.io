@@ -1,14 +1,16 @@
 *{
-    font-family: 'Source Sans Pro', sans-serif;  
+    font-family: 'Quicksand', sans-serif; 
     margin: 0;
     padding: 0px;
     box-sizing: content-box;
+    list-style: none;
 } 
 img{
     max-width: 100%;
 }
 .header-nav{
-    background: #0793df;
+    font-family: 'Source Sans Pro', sans-serif; 
+    background: #5902EC;
 }
 .header-nav img{
     border-radius: 100%;
@@ -51,7 +53,226 @@ nav:checked ~ .menu-nav{
     padding: 10px 10px;
     font-weight: 900;
 }
+main{
+    display: flex;
+    flex-direction: column;
+}
+#profile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#profile h1,
+#profile h3,
+#profile ul,
+#profile p
+{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+#profile article{
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 0 100% 0 0;
+    border-top: #E04DB0 1px solid;
+}
+#profile aside{
+    flex-grow: 2;
+    text-align: center;
+    border-top: #E04DB0 1px solid;
+    border-radius: 100% 20px 0 0;
+}
+#profile aside h1{
+    font-size: 30px;
+    margin-top: 2em;
+}
+#profile aside p{
+    color: #E04DB0;
+    max-width: 650px;
+    font-size: 24px;
+    margin: auto;
+}
+#profile .icon-profile{
+    border-radius: 100%;
+    max-width: 100%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+#references{
+    text-align: center;
+    min-height: 400px;
+}
+#references h3{
+    margin-top: 150px;
+    font-size: 30px;
+    font-weight: 300;
+}
+#references h5{
+    font-size: 30px;
+    font-weight: 300;
+}
+#projetos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#projetos div{
+    width: 33.3333%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+#projetos div *{
+    display: block;
+}
+#projetos div figure,
+#projetos div figure figcaption,
+#projetos div figure figcaption img{
+    width: auto; 
+    margin: 0 auto;
+    padding: 0;
+}
+#projetos{
+    max-height: 400px;
+}
+#projetos div figure{
+    width: auto;
+    max-width: 350px;
+    min-width: 250px;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#projetos div figure figcaption{
+    margin: 10px;
+    height: 30%;
+    border-top: solid #eee 0.1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#projetos div figure figcaption p{
+    font-family: 'Source Sans Pro', sans-serif; 
+    max-width: fit-content;
+}
 
+#projetos div figure figcaption a{
+    border-radius: 3px;
+    background-color: #5902EC;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+}
+#projetos figure .img_project{
+    margin: auto;
+    max-width: 90%;
+    max-height: 40%;
+    border-radius: 3px;
+}
+
+#formatura{
+    text-align: center;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+}
+footer > div,
+footer > p{
+    display: inline-flex;
+    justify-content: space-around;
+}
+#skills{
+    margin-top: 2em !important;
+    font-size: 30px;
+}
+#skills, .skills-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.skills-details{
+    color: #E04DB0;
+}
+
+.skills-details{
+    text-align: left;
+}
+#formatura{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: unset;
+    align-items: center;
+}
+#formatura > div{
+    width: 50%;
+}
+.img-formatura{
+    width: 100%;
+    height: 28em;
+}
+#contato{
+    display: flex;
+    flex-direction: column;
+}
+#contato p{
+    min-height: 5em;
+    background-color: #000;
+    color: #fff;
+    align-items: center;
+    font-weight: 800;
+}
+#contato .form-main{
+    display: flex;
+}
+#contato .form-main div{
+    width: 50%;
+}
+.form-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFA4D;
+}
+.form-content form {
+    display: contents;
+}
+.form-content form label {
+    width: 70%;
+    display: block;
+    margin-top: 20px;
+    max-width: 350px;
+}
+.form-content form label input{
+    width: 99%;
+    height: 40px;
+    border-color: #E04DB0 1px solid;
+    text-indent: 10px;
+}
+.form-content form button{
+    background-color: #E04DB0;
+    border-style: none;
+    color: #FFF;
+    font-weight: 900;
+    font-size: large;
+    width: 70%;
+    line-height: 50px;
+    margin-top: 10%;
+    max-width: 350px;
+}
 
 @media screen and (max-width:700px) {
     .header-nav nav{
@@ -65,6 +286,51 @@ nav:checked ~ .menu-nav{
     }    
     .menu-nav li{
         width: inherit;
+    }
+}
+@media screen and (max-width:1024px) {
+    #formatura{
+        display: block;
+        position: relative;
+        min-height: 400px;
+    }
+    #formatura > div{
+        width: 100%;
+    }
+    #content-text-forma,
+    #content-img-forma{
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 400px;
+        overflow: hidden;
+    }
+    #content-text-forma{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 2;
+        color: #FFF;
+        font-size: large;
+        font-weight: ;
+    }
+    #content-img-forma{
+        z-index: 1;
+    }
+    #projetos{
+        display: inline-flex;
+        flex-direction: unset;
+        flex-wrap: wrap;
+        max-height: 100%;
+    }
+    #projetos div {
+        width: 100%;
+        height: 500px;
+    }
+    #projetos div figure{
+        width: 100%;
+        height: 99%;
     }
 }
 
