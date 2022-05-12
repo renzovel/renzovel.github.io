@@ -246,6 +246,7 @@ footer > p{
     align-items: center;
     justify-content: center;
     background-color: #FFFA4D;
+    padding: 30px 0 30px 0;
 }
 .form-content form {
     display: contents;
@@ -272,6 +273,22 @@ footer > p{
     line-height: 50px;
     margin-top: 10%;
     max-width: 350px;
+}
+.content-redes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.content-redes img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.content-redes > div{
+    display: contents;
 }
 
 @media screen and (max-width:700px) {
@@ -331,6 +348,16 @@ footer > p{
     #projetos div figure{
         width: 100%;
         height: 99%;
+    }
+    #contato .form-main {
+        display: flex;
+        flex-direction: column;
+    }    
+    #contato .form-main div{
+        width: 100%;
+    }
+    .content-redes{
+        min-height: 300px;
     }
 }
 
