@@ -5,6 +5,16 @@
     box-sizing: content-box;
     list-style: none;
 } 
+body{
+    background-image: url("../images/certificado-phtelecom.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+body div, article, aside, footer, section{
+    background-color: #fff;
+}
 img{
     max-width: 100%;
 }
@@ -101,11 +111,14 @@ main{
 #references{
     text-align: center;
     min-height: 400px;
+    background-color: transparent;
+    color: #FFF;
+    text-shadow: #eee 2px 2px 2px 2px;
 }
 #references h3{
     margin-top: 150px;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 40px;
+    font-weight: 900;
 }
 #references h5{
     font-size: 30px;
@@ -160,6 +173,10 @@ main{
 #projetos div figure figcaption p{
     font-family: 'Source Sans Pro', sans-serif; 
     max-width: fit-content;
+    text-align: justify;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-indent: 10px;
 }
 
 #projetos div figure figcaption a{
@@ -257,11 +274,12 @@ footer > p{
     margin-top: 20px;
     max-width: 350px;
 }
-.form-content form label input{
+.form-content form input{
     width: 99%;
     height: 40px;
-    border-color: #E04DB0 1px solid;
+    border: #E04DB0 1px solid;
     text-indent: 10px;
+    border-radius: 5px;
 }
 .form-content form button{
     background-color: #E04DB0;
@@ -290,6 +308,14 @@ footer > p{
 .content-redes > div{
     display: contents;
 }
+input:focus{
+    box-shadow: #e04db0 0px 0px 0px 1px;
+    outline: #e04db0;
+    transition: 0.2s;
+}
+#content-text-forma{
+    background-color: transparent;
+}
 
 @media screen and (max-width:700px) {
     .header-nav nav{
@@ -303,6 +329,10 @@ footer > p{
     }    
     .menu-nav li{
         width: inherit;
+    }
+    #references h3{
+        margin-top: 100px;
+        font-size: 25px;
     }
 }
 @media screen and (max-width:1024px) {
@@ -330,7 +360,7 @@ footer > p{
         z-index: 2;
         color: #FFF;
         font-size: large;
-        font-weight: ;
+        font-weight: 900;
     }
     #content-img-forma{
         z-index: 1;
@@ -358,6 +388,9 @@ footer > p{
     }
     .content-redes{
         min-height: 300px;
+    }
+    #references h3{
+        font-size: 35px;
     }
 }
 
