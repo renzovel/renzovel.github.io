@@ -105,5 +105,5 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
-var buttonSubmit=document.querySelector("#submit");
+var buttonSubmit=document.querySelector("#submitContato");
 buttonSubmit.addEventListener("click",submit);
