@@ -335,6 +335,18 @@ input:focus{
         font-size: 25px;
     }
 }
+.msg-success, 
+.msg-error{
+    display: block;
+    font-weight: 900;
+    padding-top: 5px;
+}
+.msg-success{    
+    color: green;
+}
+.msg-error{
+    color: red;
+}
 @media screen and (max-width:1024px) {
     #formatura{
         display: block;
