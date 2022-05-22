@@ -82,7 +82,8 @@ function validateEvent(event){
     validator(input)  
 }
 
-function submit(){
+function submit(event){
+    event.preventDefault();
     for(inputName in config.elements){
         let input=document.querySelector("input[name='"+inputName+"']");
         if(validator(input)===false){
@@ -91,7 +92,6 @@ function submit(){
             break;
         }
     }
-
 }
 
 document.addEventListener("DOMContentLoaded",function(){
@@ -101,8 +101,6 @@ document.addEventListener("DOMContentLoaded",function(){
         input.addEventListener("keyup", validateEvent);
         input.addEventListener("focusout", validateEvent);
     }
-
-
 });
 
 var buttonSubmit=document.querySelector("#submitContato");
