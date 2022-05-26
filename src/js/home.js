@@ -34,7 +34,8 @@ function removeMsg(tag){
 var config={
     elements:{
         nome:{
-            required:true
+            required:true,
+            nome:true
         },
         email:{
             required:true,
@@ -63,6 +64,18 @@ var validateProperty={
             createMsg(input,"error", "O email nao e valido!");
             return false;
         }
+    },
+    nome:function(input){
+        removeMsg(input);
+        var regex=new RegExp("^[a-zA-Z]+$");
+        if (regex.test(input.value)) {
+            createMsg(input,"success", false);
+            return true;
+        } else {
+            createMsg(input,"error", "O nome nao e valido!");
+            return false;
+        }
+
     }
 }
 
@@ -82,17 +95,67 @@ function validateEvent(event){
     validator(input)  
 }
 
+function disabledInputs(value){
+    for(inputName in config.elements){
+        let input=document.querySelector("input[name='"+inputName+"']");
+        input.disabled=value;
+    }
+}
+
+function clearInputs(){
+    for(inputName in config.elements){
+        let input=document.querySelector("input[name='"+inputName+"']");
+        removeMsg(input);
+        input.value="";
+    }
+}
+
 function submit(event){
     event.preventDefault();
+    //disable all inputs 
+    event.target.disabled=true;
+    disabledInputs(true);
     for(inputName in config.elements){
         let input=document.querySelector("input[name='"+inputName+"']");
         if(validator(input)===false){
+            disabledInputs(false);
+            event.target.disabled=false;
             input.focus();
             return false;
             break;
         }
     }
+    disabledInputs(false);
+    event.target.disabled=false;
+    clearInputs();
+
+
+    let modal=document.querySelector(".modal");
+
+    modal.classList.remove("modal-hide");
+    modal.classList.add("modal-show");
+
+    let titleModal=document.querySelector(".modal .header .title");
+    titleModal.textContent="";
+
+    let bodyModel=document.querySelector(".modal .body h3");
+    bodyModel.textContent="Você será contactado em breve...!";
 }
+
+function modalClose(){
+    let modal=document.querySelector(".modal");
+    modal.classList.remove("modal-show");
+    modal.classList.add("modal-hide");
+}
+
+function modalCloseModal(event){
+    if (event.target.classList.contains("modal")) {
+        let modalClass=event.target.classList;
+        modalClass.remove("modal-show");
+        modalClass.add("modal-hide");        
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded",function(){
     //create events validate all inputs
@@ -103,5 +166,14 @@ document.addEventListener("DOMContentLoaded",function(){
     }
 });
 
+
 var buttonSubmit=document.querySelector("#submitContato");
 buttonSubmit.addEventListener("click",submit);
+
+var modalCloseBtn=document.querySelectorAll(".modal-close");
+modalCloseBtn.forEach((element)=>{
+    element.addEventListener("click", modalClose);
+});
+
+let modal=document.querySelector(".modal");
+modal.addEventListener("click", modalCloseModal);

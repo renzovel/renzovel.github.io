@@ -331,13 +331,19 @@ input:focus{
 .msg-error{
     color: red;
 }
+.modal-hide{
+    display: none;
+}
+.modal-show{
+    display: flex !important;
+}
 .modal{
+    display: none;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    display: flex;
     z-index: 10;
     background-color: rgba(204,204,204,0.5);
     align-items: center;
@@ -361,10 +367,11 @@ input:focus{
     position: relative;
 }
 .modal .title{
-    padding: 10px;
+    display: inline-block;
+    padding: 10px 15px;
     font-size: 20px;
 }
-.modal .close{
+.modal .close-icon{
     position: absolute;
     right: 0px;
     padding: 10px;
