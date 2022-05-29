@@ -22,8 +22,14 @@ img{
     max-width: 100%;
 }
 .header-nav{
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    position: fixed;
+    z-index: 11;
     font-family: 'Source Sans Pro', sans-serif; 
     background: #5902EC;
+
 }
 .header-nav img{
     border-radius: 100%;
@@ -33,7 +39,7 @@ img{
 .header-nav nav{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
 .header-nav nav ul{
@@ -50,7 +56,7 @@ img{
     min-width: 100px;
 }
 .menu-nav li:hover{
-    background: #0c88cb; 
+    background: #2440d1; 
     transition: 1s;
 }
 nav:checked ~ .menu-nav{
@@ -67,6 +73,7 @@ nav:checked ~ .menu-nav{
     font-weight: 900;
 }
 main{
+    padding-top: 60px;
     display: flex;
     flex-direction: column;
 }
@@ -112,14 +119,16 @@ main{
     margin-bottom: 25px;
 }
 #references{
+    background-image: url(../images/div-effect.png);
+    min-height: 919px;
+    background-position: bottom;
     text-align: center;
-    min-height: 400px;
     background-color: transparent;
     color: #FFF;
     text-shadow: #eee 2px 2px 2px 2px;
 }
 #references h3{
-    margin-top: 150px;
+    margin-top: 250px;
     font-size: 40px;
     font-weight: 900;
 }
@@ -137,7 +146,6 @@ main{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #eee;
 }
 #projetos div *{
     display: block;
@@ -253,6 +261,8 @@ footer > p{
     color: #fff;
     align-items: center;
     font-weight: 800;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 #contato .form-main{
     display: flex;
@@ -332,7 +342,7 @@ input:focus{
     color: red;
 }
 .modal-hide{
-    display: none;
+    display: none !important;
 }
 .modal-show{
     display: flex !important;
@@ -403,6 +413,9 @@ input:focus{
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex-wrap: nowrap;
+        height: 60px;
+        overflow: hidden;
     }
     .header-nav nav ul{
         display: block;
@@ -412,7 +425,6 @@ input:focus{
         width: inherit;
     }
     #references h3{
-        margin-top: 100px;
         font-size: 25px;
     }
     .modal-content{
@@ -421,6 +433,9 @@ input:focus{
         min-width: 95% !important; 
         height: auto;
         min-height: 200px;
+    }
+    .header-nav img{
+        visibility: hidden;
     }
 }
 @media screen and (max-width:1024px) {

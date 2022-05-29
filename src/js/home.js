@@ -112,7 +112,7 @@ function clearInputs(){
 
 function submit(event){
     event.preventDefault();
-    //disable all inputs 
+    /*//disable all inputs 
     event.target.disabled=true;
     disabledInputs(true);
     for(inputName in config.elements){
@@ -127,7 +127,7 @@ function submit(event){
     }
     disabledInputs(false);
     event.target.disabled=false;
-    clearInputs();
+    clearInputs();*/
 
 
     let modal=document.querySelector(".modal");
