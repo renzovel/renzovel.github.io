@@ -31,7 +31,7 @@ img{
     background: #5902EC;
 
 }
-.header-nav img{
+.header-nav .icon-nav{
     border-radius: 100%;
     margin: 10px;
     border: 0.5px solid #FFF;
@@ -71,6 +71,22 @@ nav:checked ~ .menu-nav{
     color: #fff;
     padding: 10px 10px;
     font-weight: 900;
+}
+.btn-menu-apps{
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 50px;
+    margin: 5px;
+    width: auto;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+}
+.btn-menu-apps-active{
+    display: none;
 }
 main{
     padding-top: 60px;
@@ -408,6 +424,9 @@ input:focus{
     background-color: #5a6268;
     border-color: #545b62;
 }
+.nav-active{
+    display: none;
+}
 @media screen and (max-width:700px) {
     .header-nav nav{
         display: flex;
@@ -416,6 +435,7 @@ input:focus{
         flex-wrap: nowrap;
         height: 60px;
         overflow: hidden;
+        transition: all 1s;
     }
     .header-nav nav ul{
         display: block;
@@ -434,8 +454,20 @@ input:focus{
         height: auto;
         min-height: 200px;
     }
-    .header-nav img{
+    .header-nav .icon-nav{
         visibility: hidden;
+    }
+    .btn-menu-apps{
+        display: block;
+    }
+    .btn-menu-apps-active{
+        display: block;
+        transform: rotate(45deg);
+    }
+    .nav-active{
+        display: block;
+        height: 490px !important;
+        overflow: auto !important;
     }
 }
 @media screen and (max-width:1024px) {

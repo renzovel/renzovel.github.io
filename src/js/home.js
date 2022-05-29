@@ -156,6 +156,18 @@ function modalCloseModal(event){
     }
 }
 
+function activeMenuAmburger(event){
+    let tag=document.querySelector(".btn-menu-apps");
+    let nav=document.querySelector(".header-nav nav");
+    if(tag.classList.contains("btn-menu-apps-active")){
+        tag.classList.remove("btn-menu-apps-active");
+        nav.classList.remove("nav-active");
+    }else{
+        tag.classList.add("btn-menu-apps-active");
+        nav.classList.add("nav-active");
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded",function(){
     //create events validate all inputs
@@ -177,3 +189,7 @@ modalCloseBtn.forEach((element)=>{
 
 let modal=document.querySelector(".modal");
 modal.addEventListener("click", modalCloseModal);
+
+//menu amburger
+let menuAmburger=document.querySelector(".btn-menu-apps");
+menuAmburger.addEventListener("click", activeMenuAmburger);
