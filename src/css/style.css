@@ -34,7 +34,8 @@ img{
 .header-nav .icon-nav{
     border-radius: 100%;
     margin: 10px;
-    border: 0.5px solid #FFF;
+    border: 2px solid #FFF;
+    box-sizing: border-box;
 }
 .header-nav nav{
     display: flex;
