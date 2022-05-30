@@ -112,7 +112,7 @@ function clearInputs(){
 
 function submit(event){
     event.preventDefault();
-    /*//disable all inputs 
+    //disable all inputs 
     event.target.disabled=true;
     disabledInputs(true);
     for(inputName in config.elements){
@@ -127,7 +127,7 @@ function submit(event){
     }
     disabledInputs(false);
     event.target.disabled=false;
-    clearInputs();*/
+    clearInputs();
 
 
     let modal=document.querySelector(".modal");
@@ -169,6 +169,54 @@ function activeMenuAmburger(event){
 }
 
 
+function createTagsGithub(url, titulo, descricao, repositorio){ 
+   let projectGit=document.querySelector(".project-git");
+   let projectCard=document.createElement("div");
+   let div=document.createElement("div");
+   let logoGithub=document.createElement("ion-icon");
+   let aTitulo=document.createElement("a");
+   let hTitulo=document.createElement("h4");
+   let p=document.createElement("p");
+   switch (repositorio.toLowerCase()) {
+       case "gitlab":
+        logoGithub.setAttribute("name", "logo-gitlab");
+           break;   
+       default:
+        logoGithub.setAttribute("name", "logo-github");
+           break;
+   }
+   projectCard.setAttribute("class", "project-card");
+   p.textContent=descricao;
+   hTitulo.textContent=titulo;
+   aTitulo.href=url;
+   aTitulo.target="_blank";
+   aTitulo.append(hTitulo);
+   div.append(logoGithub);
+   projectCard.append(div, aTitulo, p);
+   projectGit.appendChild(projectCard);
+}
+
+function APIRepository(){
+    fetch("https://api.github.com/users/renzovel/repos")
+    .then((res)=>{
+        return res.json();
+    })
+    .then((res)=>{
+        res.forEach((item)=>{
+            createTagsGithub(
+                item.html_url, 
+                item.name, 
+                item.description, 
+                'github'
+                );
+        });
+    })
+    .catch((erro)=>{
+        console.error(erro);
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded",function(){
     //create events validate all inputs
     for(inputName in config.elements){
@@ -193,3 +241,7 @@ modal.addEventListener("click", modalCloseModal);
 //menu amburger
 let menuAmburger=document.querySelector(".btn-menu-apps");
 menuAmburger.addEventListener("click", activeMenuAmburger);
+
+
+
+document.addEventListener("DOMContentLoaded", APIRepository);
