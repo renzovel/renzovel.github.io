@@ -211,6 +211,10 @@ function APIRepository(){
                 );
         });
     })
+    .finally(()=>{
+        let projectGit=document.querySelector(".project-git");
+        projectGit.classList.remove("loading-active");
+    })
     .catch((erro)=>{
         console.error(erro);
     });
