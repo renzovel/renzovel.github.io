@@ -128,32 +128,35 @@ function submit(event){
     disabledInputs(false);
     event.target.disabled=false;
     clearInputs();
+    modalShow("", "Você será contactado em breve...!");
+}
 
-
+function modalShow(titulo, message){
+    let titleModal=document.querySelector(".modal .header .title");
+    titleModal.textContent=titulo;
+    let bodyModel=document.querySelector(".modal .body h3");
+    bodyModel.textContent=message;
     let modal=document.querySelector(".modal");
-
     modal.classList.remove("modal-hide");
     modal.classList.add("modal-show");
-
-    let titleModal=document.querySelector(".modal .header .title");
-    titleModal.textContent="";
-
-    let bodyModel=document.querySelector(".modal .body h3");
-    bodyModel.textContent="Você será contactado em breve...!";
+    modal.style.display="flex";
 }
 
 function modalClose(){
     let modal=document.querySelector(".modal");
     modal.classList.remove("modal-show");
     modal.classList.add("modal-hide");
+    setTimeout(()=>{
+        modal.style.display="none";
+    },400);
+    console.log("aqui1");
 }
 
 function modalCloseModal(event){
     if (event.target.classList.contains("modal")) {
-        let modalClass=event.target.classList;
-        modalClass.remove("modal-show");
-        modalClass.add("modal-hide");        
+        modalClose();    
     }
+    
 }
 
 function activeMenuAmburger(event){

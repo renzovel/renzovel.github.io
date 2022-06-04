@@ -350,14 +350,7 @@ input:focus{
 .msg-error{
     color: red;
 }
-.modal-hide{
-    display: none !important;
-}
-.modal-show{
-    display: flex !important;
-}
 .modal{
-    display: none;
     position: fixed;
     left: 0;
     right: 0;
@@ -416,6 +409,36 @@ input:focus{
 .modal .footer button:hover{
     background-color: #5a6268;
     border-color: #545b62;
+}
+.modal-hide{
+    -o-animation: modal-hide 0.5s linear 1;
+    -moz-animation: modal-hide 0.5s linear 1;
+    -webkit-animation: modal-hide 0.5s linear 1;
+    animation: modal-hide 0.5s linear 1;
+}
+
+.modal-show{
+    display: flex;
+    -o-animation: modal-show 0.5s linear 1;
+    -moz-animation: modal-show 0.5s linear 1;
+    -webkit-animation: modal-show 0.5s linear 1;
+    animation: modal-show 0.5s linear 1;
+}
+@keyframes modal-show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes modal-hide{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 .nav-active{
     display: none;
@@ -476,6 +499,9 @@ input:focus{
     border: transparent 2px solid;
     border-top: violet 1px solid;
     border-bottom: violet 1px solid;
+    -o-animation:  loading 2s linear infinite;
+    -moz-animation:  loading 2s linear infinite;
+    -webkit-animation:  loading 2s linear infinite;
     animation: loading 2s linear infinite;
     border-radius: 100%;
 }
