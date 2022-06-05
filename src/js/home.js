@@ -40,6 +40,9 @@ var config={
         email:{
             required:true,
             email:true
+        },
+        mensagem:{
+            required:true
         }
     }
 }
@@ -97,14 +100,14 @@ function validateEvent(event){
 
 function disabledInputs(value){
     for(inputName in config.elements){
-        let input=document.querySelector("input[name='"+inputName+"']");
+        let input=document.querySelector("input[name='"+inputName+"'], textarea[name='"+inputName+"']");
         input.disabled=value;
     }
 }
 
 function clearInputs(){
     for(inputName in config.elements){
-        let input=document.querySelector("input[name='"+inputName+"']");
+        let input=document.querySelector("input[name='"+inputName+"'], textarea[name='"+inputName+"']");
         removeMsg(input);
         input.value="";
     }
@@ -116,7 +119,7 @@ function submit(event){
     event.target.disabled=true;
     disabledInputs(true);
     for(inputName in config.elements){
-        let input=document.querySelector("input[name='"+inputName+"']");
+        let input=document.querySelector("input[name='"+inputName+"'], textarea[name='"+inputName+"']");
         if(validator(input)===false){
             disabledInputs(false);
             event.target.disabled=false;
@@ -227,7 +230,7 @@ function APIRepository(){
 document.addEventListener("DOMContentLoaded",function(){
     //create events validate all inputs
     for(inputName in config.elements){
-        let input=document.querySelector("input[name='"+inputName+"']");
+        let input=document.querySelector("input[name='"+inputName+"'], textarea[name='"+inputName+"']");
         input.addEventListener("keyup", validateEvent);
         input.addEventListener("focusout", validateEvent);
     }

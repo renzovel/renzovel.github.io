@@ -190,11 +190,14 @@
             <div class="form-content">
                 <h2>Contato</h2>
                 <form action="#" method="post">
-                    <label for="nome">Nome:
+                    <label for="nome">Nome: *
                         <input id="nome" type="text" name="nome" value="" placeholder="Seu nome...">
                     </label>
-                    <label for="email">Email:
+                    <label for="email">Email: *
                         <input id="email" type="text" name="email" value="" placeholder="Seu email...">
+                    </label>
+                    <label for="mensagem">Mensagem: *
+                        <textarea id="mensagem"  name="mensagem" cols="30" rows="10" placeholder="Qual o motivo do seu contato..."></textarea>
                     </label>
                     <button id="submitContato" type="button">Enviar</button>
                 </form>
