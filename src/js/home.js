@@ -42,7 +42,8 @@ var config={
             email:true
         },
         mensagem:{
-            required:true
+            required:true,
+            min:25
         }
     }
 }
@@ -79,13 +80,24 @@ var validateProperty={
             return false;
         }
 
+    },
+    min:function(input, valor){
+        removeMsg(input);
+        if (input.value.length>(valor-1)) {
+            createMsg(input,"success", false);
+            return true;
+        } else {
+            createMsg(input,"error", `O mínimo de caracteres é ${valor} !`);
+            return false;
+        }
     }
 }
 
 function validator(input){
     for(property in config.elements[input.name]){
-        let response=validateProperty[property](input);
-        if(response!=config.elements[inputName][property]){
+        let valor=config.elements[inputName][property];
+        let response=validateProperty[property](input, valor);
+        if(response===false){
             return false;
             break;
         }
